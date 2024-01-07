@@ -15,7 +15,7 @@ const updateAvatar = async (req, res) => {
     await User.findByIdAndUpdate(_id, { avatarURL });
 
     res.json({
-      avatarUrl,
+      avatarURL,
     });
   } catch (error) {
     await fs.unlink(tempUpload);
