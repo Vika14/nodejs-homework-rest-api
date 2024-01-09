@@ -1,7 +1,7 @@
-const connrollerWraper = (conctollers) => {
+const controllerWraper = (controllers) => {
   const func = async (req, res, next) => {
     try {
-      await conctollers(req, res, next);
+      await controllers(req, res, next);
     } catch (error) {
       next(error);
     }
@@ -9,4 +9,4 @@ const connrollerWraper = (conctollers) => {
   return func;
 };
 
-module.exports = connrollerWraper;
+module.exports = controllerWraper;
